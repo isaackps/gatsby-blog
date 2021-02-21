@@ -1,8 +1,9 @@
 backend:
   name: github
   repo: isaackps/gatsby-blog
-media_folder: static/assets
-public_folder: assets
+  branch: main
+media_folder: static/images/uploads
+public_folder: /images/uploads
 collections:
   - name: blog
     label: Blog
