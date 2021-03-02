@@ -1,30 +1,46 @@
-// import React from "react"
-// import { Link } from "gatsby"
-// import Layout from "../components/layout"
-// import Image from "../components/image"
-// import SEO from "../components/seo"
-
-// const IndexPage = () => (
-//   <Layout>
-// {
-/* <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link> */
-// }
-//   </Layout>
-// )
-
-// export default IndexPage
-
+import { graphql } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
+import ArticleTiles from "../components/templates/ArticleTiles"
 
-const IndexPage = () => <Layout>{""}</Layout>
+const IndexPage = ({ data }) => {
+  const { allMarkdownRemark } = data
+
+  return (
+    <Layout>
+      <SEO title="Isaac Blog" />
+      {allMarkdownRemark.edges.map((post, i) => (
+        <ArticleTiles key={i} post={post.node.frontmatter} />
+      ))}
+    </Layout>
+  )
+}
 
 export default IndexPage
+
+export const AllBlogPostQuery = graphql`
+  query AllBlogPost {
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            description
+            tag
+            path
+            date
+            thumbnail {
+              childImageSharp {
+                fixed(width: 300) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`

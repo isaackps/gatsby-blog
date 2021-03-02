@@ -2,6 +2,14 @@ backend:
   name: github
   repo: isaackps/gatsby-blog
   branch: main
+  squash_merges: true
+  commit_messages:
+    create: "feat: Create {{collection}} “{{slug}}” {{author-name}}"
+    update: "chore: Update {{collection}} “{{slug}}” {{author-name}}"
+    delete: "chore: Delete {{collection}} “{{slug}}” {{author-name}}"
+    uploadMedia: "chore: Upload “{{path}}” {{author-name}}"
+    deleteMedia: "chore: Delete “{{path}}” {{author-name}}"
+publish_mode: editorial_workflow
 media_folder: static/images/uploads
 public_folder: /images/uploads
 collections:
@@ -14,5 +22,7 @@ collections:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: description, label: Description }
-      - { name: image, label: Image, widget: image }
+      - { name: thumbnail, label: Thumbnail, widget: image }
+      - { name: banner, label: Banner, widget: image }
+      - { name: tag, label: Tag }
       - { name: body, label: Body, widget: markdown }

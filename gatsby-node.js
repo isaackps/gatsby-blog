@@ -20,11 +20,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { data } = await getPageData(graphql)
-  console.log("dddd", data)
   data.blogPosts.edges.forEach(({ node }) => {
     const { slug } = node.fields
     actions.createPage({
-      path: `/blog${slug}`,
+      path: `${slug}`,
       component: path.resolve("./src/components/templates/BlogPost.js"),
       context: { slug: slug },
     })

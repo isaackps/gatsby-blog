@@ -1,19 +1,37 @@
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import React from "react"
+import BackToTop from "../backToTop"
+import Layout from "../layout"
+import SEO from "../seo"
 
 const BlogPost = ({ data }) => {
-  console.log("data,", data)
+  const { markdownRemark } = data
+  const { frontmatter, html } = markdownRemark
+
   return (
-    <div>
-      <div>
-        <h2>{data.markdownRemark.frontmatter.title}</h2>
+    <Layout>
+      <SEO title={`${frontmatter.title}`} />
+      <div className="flex flex-col items-center">
+        <div className="max-w-screen-sm">
+          <h2 className="font-serif text-4xl capitalize font-medium">
+            {frontmatter.title}
+          </h2>
+          <div className="font-sans text-gray-500 text-xl">
+            {frontmatter.description}
+          </div>
+        </div>
         <Img
-          fixed={data.markdownRemark.frontmatter.image.childImageSharp.fixed}
+          className="my-8 w-full"
+          fixed={frontmatter.banner.childImageSharp.fixed}
         />
-        <div> {data.markdownRemark.frontmatter.description}</div>
+        <div
+          className="max-w-screen-sm"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
       </div>
-    </div>
+      <BackToTop />
+    </Layout>
   )
 }
 
@@ -25,12 +43,15 @@ export const BlogPostTemplateQuery = graphql`
       fields {
         slug
       }
+      html
       frontmatter {
         title
         description
-        image {
+        tag
+        path
+        banner {
           childImageSharp {
-            fixed(width: 200) {
+            fixed(width: 1280) {
               ...GatsbyImageSharpFixed
             }
           }
