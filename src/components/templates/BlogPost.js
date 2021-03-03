@@ -1,7 +1,6 @@
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import React from "react"
-import BackToTop from "../backToTop"
 import Layout from "../layout"
 import SEO from "../seo"
 
@@ -30,7 +29,7 @@ const BlogPost = ({ data }) => {
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>
-      <BackToTop />
+      {/* <BackToTop /> */}
     </Layout>
   )
 }

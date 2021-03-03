@@ -8,8 +8,8 @@
 import { graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import BackToTop from "./backToTop"
 import Header from "./header"
-import "./layout.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,6 +27,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Blog`} />
       <div className="pt-0 pb-4 px-12 max-w-screen-xl my-0 mx-auto">
         <main>{children}</main>
+        <BackToTop />
         <footer className="mt-8">
           © {new Date().getFullYear()}, Isaac Koh
         </footer>

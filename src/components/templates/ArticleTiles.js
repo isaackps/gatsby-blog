@@ -7,7 +7,7 @@ const ArticleTiles = ({ post }) => {
   const { title, description, thumbnail, tag, date, path } = post
 
   return (
-    <div className="mb-8 font-sans w-2/3">
+    <div className="mb-8 font-sans">
       <Link to={`/${path}`} className="flex cursor-pointer">
         <div className="w-2/3">
           <div className="capitalize text-black text-2xl font-bold line-clamp-2">
