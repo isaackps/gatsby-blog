@@ -3,18 +3,21 @@ import React, { useState } from "react"
 
 const BackToTop = () => {
   const [showScroll, setShowScroll] = useState(false)
+  const hasWindow = typeof window !== "undefined" ? true : false
 
   const checkScrollTop = () => {
-    if (!showScroll && window.pageYOffset > 320) {
-      setShowScroll(true)
-    } else if (showScroll && window.pageYOffset <= 320) {
-      setShowScroll(false)
+    if (hasWindow) {
+      if (!showScroll && window.pageYOffset > 320) {
+        setShowScroll(true)
+      } else if (showScroll && window.pageYOffset <= 320) {
+        setShowScroll(false)
+      }
     }
   }
-  window.addEventListener("scroll", checkScrollTop)
+  if (hasWindow) window.addEventListener("scroll", checkScrollTop)
 
   const scrollTop = () => {
-    if (showScroll) {
+    if (showScroll && hasWindow) {
       window.scrollTo({ top: 0, behavior: "smooth" })
     }
   }
