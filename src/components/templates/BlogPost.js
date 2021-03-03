@@ -29,7 +29,6 @@ const BlogPost = ({ data }) => {
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>
-      {/* <BackToTop /> */}
     </Layout>
   )
 }
