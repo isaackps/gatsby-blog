@@ -4,7 +4,10 @@ import moment from "moment"
 import React from "react"
 
 const ArticleTiles = ({ post }) => {
-  const { title, description, thumbnail, tag, date, path } = post
+  const { title, description, thumbnail, tag, date } = post
+
+  const path = title.toLowerCase().replace(/ /g, "-")
+  const tags = tag.split(" ")
 
   return (
     <div className="mb-8 font-sans">
@@ -23,7 +26,14 @@ const ArticleTiles = ({ post }) => {
             <div className="text-gray-400 mx-2 h-2 leading-3 -mt-0.5 font-sans">
               .
             </div>
-            <div className="text-gray-500 text-xs">{tag}</div>
+            {tags.map((tagName, i) => (
+              <div
+                key={i}
+                className="flex items-center text-gray-500 text-xs mx-1 px-2 py-1 rounded-full bg-blue-100"
+              >
+                {tagName}
+              </div>
+            ))}
           </div>
         </div>
         <Img fixed={thumbnail.childImageSharp.fixed} className="w-16 h-12" />

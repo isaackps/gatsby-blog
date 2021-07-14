@@ -39,8 +39,8 @@ const IndexPage = ({ data }) => {
             <div className="font-bold text-gray-800 uppercase mb-4">
               About Me
             </div>
-            {contactInfos.map(info => (
-              <ContactInfo info={info} />
+            {contactInfos.map((info, i) => (
+              <ContactInfo key={i} info={info} />
             ))}
           </div>
         </div>
@@ -61,7 +61,6 @@ export const AllBlogPostQuery = graphql`
             title
             description
             tag
-            path
             date
             thumbnail {
               childImageSharp {

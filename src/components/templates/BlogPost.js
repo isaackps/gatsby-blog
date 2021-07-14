@@ -8,6 +8,8 @@ const BlogPost = ({ data }) => {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
 
+  console.log(html)
+
   return (
     <Layout>
       <SEO title={`${frontmatter.title}`} />
@@ -25,7 +27,7 @@ const BlogPost = ({ data }) => {
           fixed={frontmatter.banner.childImageSharp.fixed}
         />
         <div
-          className="max-w-screen-sm"
+          // className="max-w-screen-sm"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>
@@ -46,7 +48,6 @@ export const BlogPostTemplateQuery = graphql`
         title
         description
         tag
-        path
         banner {
           childImageSharp {
             fixed(width: 1280) {
