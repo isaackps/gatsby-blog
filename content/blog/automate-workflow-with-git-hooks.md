@@ -1,5 +1,5 @@
 ---
-path: githook
+path: Automate workflow with git hooks
 date: 2021-07-14T07:56:42.064Z
 title: Automate workflow with git hooks
 description: Boost productivity with git hooks!
