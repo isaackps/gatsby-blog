@@ -13,11 +13,11 @@ const BlogPost = ({ data }) => {
   return (
     <Layout>
       <SEO title={`${frontmatter.title}`} />
-      <div className="flex flex-col items-center">
-        <div className="max-w-screen-sm">
-          <h2 className="font-serif text-4xl capitalize font-medium">
+      <div className="flex flex-col items-center max-w-screen-sm">
+        <div>
+          <h1 className="font-serif capitalize font-medium">
             {frontmatter.title}
-          </h2>
+          </h1>
           <div className="font-sans text-gray-500 text-xl">
             {frontmatter.description}
           </div>
@@ -27,7 +27,7 @@ const BlogPost = ({ data }) => {
           fixed={frontmatter.banner.childImageSharp.fixed}
         />
         <div
-          // className="max-w-screen-sm"
+          className="px-5 font-serif"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>

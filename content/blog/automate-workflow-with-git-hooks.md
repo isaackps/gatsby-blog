@@ -1,16 +1,17 @@
 ---
 date: 2021-07-14T07:56:42.064Z
 title: Automate workflow with git hooks
-description: Boost productivity with git hooks!
+description: Automation with git hooks!
 thumbnail: /images/uploads/321-3210662_git-hooks-git.png
 banner: /images/uploads/githooksdirectory.png
 tag: Javascript Programming
 ---
+
 There are a lot of guidelines and processes while doing development and most of the time some of us will forget some steps. It make me wonder how nice if it were all automated.
 
-In this article, lets' discuss automation for minor but important stuffs like linting, formatting and testing using git hooks.     
+In this article, lets' discuss automation for minor but important stuffs like linting, formatting and testing using git hooks.
 
-- - -
+---
 
 ## What are git hooks?
 
@@ -28,7 +29,7 @@ cd .git/hooks
 
 And if you open the file, for example, `pre-commit.sample`, you will see some shell commands. You can update/edit it and rename the file to `pre-commit` and when you do a commit it will run this pre-commit hook before committing.
 
-But by doing so, you are to write your own conditions for the hook to exit. Exiting with anything other than zero aborts the commit, and if there isn't any exit, it will not proceed. 
+But by doing so, you are to write your own conditions for the hook to exit. Exiting with anything other than zero aborts the commit, and if there isn't any exit, it will not proceed.
 
 Then is there an easier way to use git hooks?
 
@@ -36,13 +37,11 @@ Luckily for us, yes there is!
 
 There is to be a tool call husky that simplifies this process.
 
-- - -
-
-![](/images/uploads/husky.png)
+---
 
 ## What is husky?
 
-Husky is a tool that allows us to easily deal git hooks and run the scripts we want. 
+Husky is a tool that allows us to easily deal git hooks and run the scripts we want.
 
 ## How to use husky?
 
@@ -78,7 +77,7 @@ git checkout -b feat/test-new-branch
 
 To update the hook it is quite simple, all you have to do is to add the commands you want into the shell script.
 
-Navigate and open pre-commit file, `.husky/pre-commit`. 
+Navigate and open pre-commit file, `.husky/pre-commit`.
 
 Now, we can add `npm run lint` or any command that you would want to run. Save the file and it's all done!
 
@@ -86,7 +85,7 @@ You can then run your commit command and we can see that the Husky pre-commit ho
 
 Simpler right?
 
-- - -
+---
 
 ## Conclusion
 
@@ -96,4 +95,4 @@ If you have not tried it out yet, please have a go at it. I personally think tha
 
 Thanks for reading!
 
-*NOTE: This article is written for Husky v7.0.0, any later version may have some implementation differences, please visit [Husky documentation](https://typicode.github.io/husky/#/) if needed.*
+_NOTE: This article is written for Husky v7.0.0, any later version may have some implementation differences, please visit [Husky documentation](https://typicode.github.io/husky/#/) if needed._
