@@ -19,6 +19,18 @@
   h6 {
     font-size: 16px;
   }
+  hr {
+    height: 1rem;
+    margin: 2em 1em 4em 0;
+    text-align: center;
+    border-color: #777;
+    border-width: 0;
+    border-style: dotted;
+  }
+  hr:after {
+    content: "···";
+    letter-spacing: 2em;
+  }
 }
 
 @tailwind components;
