@@ -10,7 +10,7 @@ There are a lot of guidelines and processes while doing development and most of 
 
 In this article, lets' discuss automation for minor but important stuffs like linting, formatting and testing using git hooks.     
 
----
+- - -
 
 ## What are git hooks?
 
@@ -36,7 +36,9 @@ Luckily for us, yes there is!
 
 There is to be a tool call husky that simplifies this process.
 
---- 
+- - -
+
+![](/images/uploads/husky.png)
 
 ## What is husky?
 
@@ -84,7 +86,7 @@ You can then run your commit command and we can see that the Husky pre-commit ho
 
 Simpler right?
 
----
+- - -
 
 ## Conclusion
 
@@ -92,15 +94,6 @@ With useful tooling, it can help us, developers, with our workflow and code qual
 
 If you have not tried it out yet, please have a go at it. I personally think that it is very useful, especially the pre-commit hook as it will ensure tests, lints and formats to be consistent and passing before a commit happens.
 
-
 Thanks for reading!
 
 *NOTE: This article is written for Husky v7.0.0, any later version may have some implementation differences, please visit [Husky documentation](https://typicode.github.io/husky/#/) if needed.*
-
-
-
-
-
-
-
-
