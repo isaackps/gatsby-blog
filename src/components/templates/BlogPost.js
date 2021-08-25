@@ -13,7 +13,7 @@ const BlogPost = ({ data }) => {
   return (
     <Layout>
       <SEO title={`${frontmatter.title}`} />
-      <div className="flex flex-col items-center max-w-screen-sm">
+      <div className="flex flex-col items-center max-w-screen-md">
         <div>
           <h1 className="font-serif capitalize font-medium">
             {frontmatter.title}
