@@ -20,7 +20,7 @@ This short line of CSS code will make the font-size of the page scales with the 
 
 Below is an example of this CSS trick:
 
-![without font scaling](/images/uploads/withoutfontscaling.gif "Without Font Scaling")
+![without font scaling](https://drive.google.com/file/d/1yst1zkMgld6zdrlCDQEsndGBMxnWao1k/view?usp=sharing "Without Font Scaling")
 
 ![with font scaling](/images/uploads/withfontscaling.gif "With Font Scaling")
 
@@ -81,6 +81,7 @@ Combining the above 3 tips will create a simple responsive website:
 ![final result](/images/uploads/finalresult.gif "Final Result")
 
 The CSS will look something like:
+
 ```
 html {
   font-size: calc(60% + 0.8vmin);
@@ -95,6 +96,7 @@ main {
 ```
 
 If you want to reset headers, you could include:
+
 ```
 h1 {
   font-size: 2.2rem;
