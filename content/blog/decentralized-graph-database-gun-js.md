@@ -1,6 +1,6 @@
 ---
 date: 2021-09-22T06:33:02.933Z
-title: Decentralized graph database (GUN.js)
+title: Decentralized graph database
 description: The database for freedom fighters
 thumbnail: /images/uploads/gunjs.jpeg
 banner: /images/uploads/gunjs.jpeg
